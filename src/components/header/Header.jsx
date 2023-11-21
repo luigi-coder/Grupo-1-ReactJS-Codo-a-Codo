@@ -1,7 +1,7 @@
-import './HeaderComponent.css';
+import './Header.css';
 
 
-export const HeaderComponent = () => {
+export const Header = () => {
   return (
     <header>
         <div className="logo">

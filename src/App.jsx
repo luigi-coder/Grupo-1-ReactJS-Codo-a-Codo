@@ -1,21 +1,20 @@
-import { HeaderComponent } from "./components/header/HeaderComponent";
-import { FooterComponent } from './components/footer/FooterComponent';
+import { Header } from "./components/header/Header";
+import { Footer } from './components/footer/Footer';
+import { Button } from "./components/button/Button";
+
 import './App.css'
-import { CardComponent } from "./components/card/CardComponent";
-import { ButtonComponent } from "./components/button/ButtonComponent";
+import Ecommerce from "./components/ecommerce/Ecommerce";
+import { Container } from "react-bootstrap";
 
 function App() {
 
   return (
     <>
-      <HeaderComponent/>
-      <main>
-        <CardComponent/>
-        <ButtonComponent
-          titulo={'Siguiente'}
-        />
-      </main>
-      <FooterComponent/>
+      <Header/>
+      <Container>
+        <Ecommerce/>
+      </Container>
+      <Footer/>
     </>
   )
 }
