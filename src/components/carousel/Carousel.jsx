@@ -3,7 +3,7 @@ import React from 'react'
 const Carousel = () => {
   return (
     <div>
-      hola
+      hola mundo!
     </div>
   )
 }
