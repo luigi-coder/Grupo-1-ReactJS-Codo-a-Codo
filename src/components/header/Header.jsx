@@ -12,7 +12,15 @@ export const Header = () => {
     <header>
       <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Tecno-Codo</Navbar.Brand>
+      <div className="logo">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/8146/8146003.png"
+            alt="carrito"
+            width="50px"
+            height="50px"
+          />
+        </div>
+        <Navbar.Brand href="#" className="tec">Tecno-<span className="cod">Code</span></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
