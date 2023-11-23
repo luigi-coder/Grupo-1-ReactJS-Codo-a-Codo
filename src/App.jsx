@@ -1,6 +1,7 @@
-import { Header } from "./components/header/Header";
-import { Footer } from './components/footer/Footer';
-import { Button } from "./components/button/Button";
+import { Header }        from "./components/header/Header";
+import { Footer }        from './components/footer/Footer';
+import { Button }        from "./components/button/Button";
+import { CarouselPromo } from "./components/carousel/CarouselPromo";
 
 import './App.css'
 import Ecommerce from "./components/ecommerce/Ecommerce";
@@ -13,6 +14,7 @@ function App() {
       <Header/>
       <Container>
         <Ecommerce/>
+        <CarouselPromo/>
       </Container>
       <Footer/>
     </>
