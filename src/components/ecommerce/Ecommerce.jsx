@@ -29,8 +29,10 @@ const Ecommerce = () => {
 
             const respuestaLaptop = await axios.get('https://api.mercadolibre.com/sites/MLA/search?q=laptop#json');
 
+            const respuestaPhone = await axios.get("https://api.mercadolibre.com/sites/MLA/search?q=phone#json");
+
             // meter las dos respuestas en un mismo array con setProductos
-            setProductos([...respuestaXbox.data.results, ...respuestaLaptop.data.results]);
+            setProductos([...respuestaPhone.data.results, ...respuestaXbox.data.results, ...respuestaLaptop.data.results]);
 
             console.log('Productos:', productos);
 
@@ -47,16 +49,19 @@ const Ecommerce = () => {
 
     return (
 
-        <Row>
+        <Row className="text-center">
             {
                 productos.map((producto, index) => (
-                    <Col sm={4} key={producto.id} className="mb-4">
+                    <Col
+                        sm={4} 
+                        key={producto.id} 
+                        className="d-flex justify-content-center mb-4 ">
                         <Card style={{ width: '18rem', height: '100%' }}>
                             <Card.Img
                                 variant="top"
-                                src={producto.thumbnail}
+                                src={producto.thumbnail.replace(/\w\.jpg/gi, "W.jpg")}
                                 style={{
-                                    margin: '0 auto',
+                                    margin: '20px auto',
                                     maxWidth: '60%',
                                     maxHeight: '160px',
                                 }}
@@ -64,14 +69,11 @@ const Ecommerce = () => {
 
                             <Card.Body>
                                 <Card.Title>{producto.title}</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
+                                
                                 <Card.Text className="mb-5">
                                     ${producto.price} ARS
                                 </Card.Text>
-                                <div style={{ position: 'absolute', bottom: 0, width: '100%' }}>
+                                <div>
                                     <Button variant="primary" className="mb-4">Go somewhere</Button>
                                 </div>
                             </Card.Body>
